@@ -1,5 +1,4 @@
 import tkinter as tk
-from tkinter import PhotoImage
 
 class BudgetApp:
     def __init__(self, root):
@@ -17,21 +16,15 @@ class BudgetApp:
             name_var.set("")
             amount_var.set(0.0)
 
-        # Load image
-        self.logo_image = PhotoImage(file="b_image.png")  # Replace with the path to your image
-
         # Create a frame around the entire app
-        app_frame = tk.Frame(root, bg="#f0f0f0", padx=10, pady=10)
+        app_frame = tk.Frame(root, bg="#f0f0f0", padx=10, pady=10)  # Adjust pady here
         app_frame.grid(row=0, column=0)
 
-        # Create a frame to hold the title label and image
+        # Create a frame to hold the title label
         title_frame = tk.Frame(app_frame, bg="#f0f0f0")
         title_frame.grid(row=0, column=0, columnspan=3, pady=10)
 
         # Create widgets
-        image_label = tk.Label(title_frame, image=self.logo_image)
-        image_label.grid(row=0, column=0, pady=10, padx=10)
-
         title_label = tk.Label(title_frame, text="Budget X - RPM Personal Finance Tracker", font=("Arial", 20, "bold"), bg="#336699", fg="white")
         title_label.grid(row=1, column=0, pady=10, padx=10)
 
@@ -84,6 +77,8 @@ if __name__ == "__main__":
     app = BudgetApp(root)
     root.geometry("600x800")  # Set initial size
     root.mainloop()
+
+
 
 
 
